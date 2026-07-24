@@ -1,5 +1,384 @@
 >>> make ruff
   ● Executing ruff in enlotus..
-    DONE
-  ● Executing ruff in sphinx..
-    DONE
+I001 [*] Import block is un-sorted or un-formatted
+  --> enlotus/__init__.py:10:1
+   |
+10 | / from pathlib import Path
+11 | | from sys import flags
+   | |_____________________^
+   |
+help: Organize imports
+   |
+12 |
+   -
+   -
+13 | PROJECT = Path(__file__).parent
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enlotus/conftest.py:10:1
+   |
+10 | / from pathlib import Path
+11 | |
+12 | | from encommon.types import DictStrAny
+13 | | from encommon.utils import save_text
+14 | |
+15 | | from pytest import fixture
+16 | |
+17 | | from . import PROJECT
+18 | | from .lotus.config import LotusConfig
+19 | | from .lotus.lotus import Lotus
+   | |______________________________^
+   |
+help: Organize imports
+   |
+13 | from encommon.utils import save_text
+   -
+14 | from pytest import fixture
+--------------------------------------------------------------------------------
+18 | from .lotus.lotus import Lotus
+   -
+19 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enlotus/lotus/__init__.py:10:1
+   |
+10 | / from .config import LotusConfig
+11 | | from .lotus import Lotus
+12 | | from .models import LotusModels
+   | |_______________________________^
+   |
+help: Organize imports
+   |
+13 |
+   -
+   -
+14 | __all__ = [
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enlotus/lotus/config.py:10:1
+   |
+10 | / from typing import Optional
+11 | |
+12 | | from encommon.config import Config
+13 | | from encommon.config import Params
+14 | | from encommon.types import DictStrAny
+15 | | from encommon.types import NCNone
+16 | | from encommon.utils.common import PATHABLE
+17 | |
+18 | | from .params.lotus import LotusParams
+   | |_____________________________________^
+   |
+help: Organize imports
+   |
+11 |
+   - from encommon.config import Config
+   - from encommon.config import Params
+   - from encommon.types import DictStrAny
+   - from encommon.types import NCNone
+12 + from encommon.config import Config, Params
+13 + from encommon.types import DictStrAny, NCNone
+14 | from encommon.utils.common import PATHABLE
+15 |
+16 | from .params.lotus import LotusParams
+   -
+17 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> enlotus/lotus/config.py:35:16
+   |
+33 |     def __init__(
+34 |         self,
+35 |         sargs: Optional[DictStrAny] = None,
+   |                ^^^^^^^^^^^^^^^^^^^^
+36 |         files: Optional[PATHABLE] = None,
+37 |         cargs: Optional[DictStrAny] = None,
+   |
+help: Convert to `X | None`
+   |
+34 |         self,
+   -         sargs: Optional[DictStrAny] = None,
+35 +         sargs: DictStrAny | None = None,
+36 |         files: Optional[PATHABLE] = None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> enlotus/lotus/config.py:36:16
+   |
+34 |         self,
+35 |         sargs: Optional[DictStrAny] = None,
+36 |         files: Optional[PATHABLE] = None,
+   |                ^^^^^^^^^^^^^^^^^^
+37 |         cargs: Optional[DictStrAny] = None,
+38 |     ) -> None:
+   |
+help: Convert to `X | None`
+   |
+35 |         sargs: Optional[DictStrAny] = None,
+   -         files: Optional[PATHABLE] = None,
+36 +         files: PATHABLE | None = None,
+37 |         cargs: Optional[DictStrAny] = None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> enlotus/lotus/config.py:37:16
+   |
+35 |         sargs: Optional[DictStrAny] = None,
+36 |         files: Optional[PATHABLE] = None,
+37 |         cargs: Optional[DictStrAny] = None,
+   |                ^^^^^^^^^^^^^^^^^^^^
+38 |     ) -> None:
+39 |         """
+   |
+help: Convert to `X | None`
+   |
+36 |         files: Optional[PATHABLE] = None,
+   -         cargs: Optional[DictStrAny] = None,
+37 +         cargs: DictStrAny | None = None,
+38 |     ) -> None:
+   |
+
+UP045 [*] Use `X | None` for type annotations
+   --> enlotus/lotus/config.py:174:10
+    |
+172 |     def __params(
+173 |         self,
+174 |     ) -> Optional[Params]:
+    |          ^^^^^^^^^^^^^^^^
+175 |         """
+176 |         Return the Pydantic model containing the configuration.
+    |
+help: Convert to `X | None`
+    |
+173 |         self,
+    -     ) -> Optional[Params]:
+174 +     ) -> Params | None:
+175 |         """
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enlotus/lotus/lotus.py:10:1
+   |
+10 | / from copy import deepcopy
+11 | | from typing import TYPE_CHECKING
+12 | |
+13 | | from encommon.types import DictStrAny
+14 | | from encommon.types import clsname
+   | |__________________________________^
+15 |
+16 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+12 |
+   - from encommon.types import DictStrAny
+   - from encommon.types import clsname
+13 + from encommon.types import DictStrAny, clsname
+14 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enlotus/lotus/models.py:33:9
+   |
+31 |           """
+32 |
+33 | /         from .params import (
+34 | |             LotusParams)
+   | |________________________^
+35 |
+36 |           return LotusParams
+   |
+help: Organize imports
+   |
+32 |
+   -         from .params import (
+   -             LotusParams)
+33 +         from .params import LotusParams
+34 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enlotus/lotus/params/__init__.py:10:1
+   |
+10 | from .lotus import LotusParams
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Organize imports
+   |
+11 |
+   -
+   -
+12 | __all__ = [
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enlotus/lotus/params/common.py:10:1
+   |
+10 | from encommon.types import BaseModel
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Organize imports
+   |
+12 |
+   -
+13 | class ConsoParamsModel(BaseModel, extra='forbid'):
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enlotus/lotus/params/lotus.py:10:1
+   |
+10 | / from typing import Annotated
+11 | | from typing import Any
+12 | | from typing import Callable
+13 | | from typing import Optional
+14 | |
+15 | | from encommon.config import Params
+16 | |
+17 | | from pydantic import Field
+   | |__________________________^
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Annotated
+   - from typing import Any
+   - from typing import Callable
+   - from typing import Optional
+10 + from typing import Annotated, Any, Callable, Optional
+11 |
+12 | from encommon.config import Params
+   -
+13 | from pydantic import Field
+   -
+14 |
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Callable`
+  --> enlotus/lotus/params/lotus.py:12:1
+   |
+10 | from typing import Annotated
+11 | from typing import Any
+12 | from typing import Callable
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+13 | from typing import Optional
+   |
+help: Import from `collections.abc`
+   |
+11 | from typing import Any
+   - from typing import Callable
+12 + from collections.abc import Callable
+13 | from typing import Optional
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> enlotus/lotus/params/lotus.py:63:17
+   |
+61 |         self,
+62 |         /,
+63 |         _parse: Optional[Callable[..., Any]] = None,
+   |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+64 |         **data: Any,
+65 |     ) -> None:
+   |
+help: Convert to `X | None`
+   |
+62 |         /,
+   -         _parse: Optional[Callable[..., Any]] = None,
+63 +         _parse: Callable[..., Any] | None = None,
+64 |         **data: Any,
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enlotus/lotus/test/__init__.py:10:1
+   |
+10 | from pathlib import Path
+   | ^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Organize imports
+   |
+11 |
+   -
+   -
+12 | SAMPLES = (
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enlotus/lotus/test/test_config.py:10:1
+   |
+10 | / from encommon.types import DictStrAny
+11 | | from encommon.utils import load_sample
+12 | | from encommon.utils import prep_sample
+13 | | from encommon.utils.sample import ENPYRWS
+14 | |
+15 | | from . import SAMPLES
+16 | | from ..config import LotusConfig
+   | |________________________________^
+   |
+help: Organize imports
+   |
+10 | from encommon.types import DictStrAny
+   - from encommon.utils import load_sample
+   - from encommon.utils import prep_sample
+11 + from encommon.utils import load_sample, prep_sample
+12 | from encommon.utils.sample import ENPYRWS
+13 |
+   - from . import SAMPLES
+14 | from ..config import LotusConfig
+   -
+15 + from . import SAMPLES
+16 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enlotus/lotus/test/test_lotus.py:10:1
+   |
+10 | / from encommon.types import DictStrAny
+11 | | from encommon.types import inrepr
+12 | | from encommon.types import instr
+13 | | from encommon.types import lattrs
+14 | | from encommon.utils import load_sample
+15 | | from encommon.utils import prep_sample
+16 | | from encommon.utils.sample import ENPYRWS
+17 | |
+18 | | from . import SAMPLES
+19 | | from ..config import LotusConfig
+20 | | from ..lotus import Lotus
+   | |_________________________^
+   |
+help: Organize imports
+   |
+9  |
+   - from encommon.types import DictStrAny
+   - from encommon.types import inrepr
+   - from encommon.types import instr
+   - from encommon.types import lattrs
+   - from encommon.utils import load_sample
+   - from encommon.utils import prep_sample
+10 + from encommon.types import DictStrAny, inrepr, instr, lattrs
+11 + from encommon.utils import load_sample, prep_sample
+12 | from encommon.utils.sample import ENPYRWS
+13 |
+   - from . import SAMPLES
+14 | from ..config import LotusConfig
+15 | from ..lotus import Lotus
+   -
+16 + from . import SAMPLES
+17 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enlotus/lotus/test/test_models.py:10:1
+   |
+10 | from ..models import LotusModels
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Organize imports
+   |
+12 |
+   -
+13 | def test_LotusModels_cover() -> None:
+   |
+
