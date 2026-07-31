@@ -6,7 +6,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from pathlib import Path
 11 | | from sys import flags
    | |_____________________^
-   |
 help: Organize imports
    |
 12 |
@@ -29,7 +28,6 @@ I001 [*] Import block is un-sorted or un-formatted
 18 | | from .lotus.config import LotusConfig
 19 | | from .lotus.lotus import Lotus
    | |______________________________^
-   |
 help: Organize imports
    |
 13 | from encommon.utils import save_text
@@ -48,7 +46,6 @@ I001 [*] Import block is un-sorted or un-formatted
 11 | | from .lotus import Lotus
 12 | | from .models import LotusModels
    | |_______________________________^
-   |
 help: Organize imports
    |
 13 |
@@ -70,7 +67,6 @@ I001 [*] Import block is un-sorted or un-formatted
 17 | |
 18 | | from .params.lotus import LotusParams
    | |_____________________________________^
-   |
 help: Organize imports
    |
 11 |
@@ -205,7 +201,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from .lotus import LotusParams
    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 11 |
@@ -219,7 +214,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from encommon.types import BaseModel
    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 12 |
@@ -239,7 +233,6 @@ I001 [*] Import block is un-sorted or un-formatted
 16 | |
 17 | | from pydantic import Field
    | |__________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -296,7 +289,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from pathlib import Path
    | ^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 11 |
@@ -316,7 +308,6 @@ I001 [*] Import block is un-sorted or un-formatted
 15 | | from . import SAMPLES
 16 | | from ..config import LotusConfig
    | |________________________________^
-   |
 help: Organize imports
    |
 10 | from encommon.types import DictStrAny
@@ -347,7 +338,6 @@ I001 [*] Import block is un-sorted or un-formatted
 19 | | from ..config import LotusConfig
 20 | | from ..lotus import Lotus
    | |_________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -374,7 +364,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from ..models import LotusModels
    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 12 |
