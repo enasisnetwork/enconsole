@@ -1,9 +1,9 @@
 >>> make pytest
   ● Executing pytest in enlotus..
 ============================= test session starts ==============================
-platform linux -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0 -- /home/runner/work/enlotus/enlotus/main/.venv-package/bin/python3
+platform linux -- Python 3.12.14, pytest-9.1.1, pluggy-1.6.0 -- /home/runner/work/enlotus/enlotus/main/.venv-package/bin/python3
 cachedir: .pytest_cache
-Using --randomly-seed=3624664127
+Using --randomly-seed=3986388358
 rootdir: /home/runner/work/enlotus/enlotus/main
 configfile: pyproject.toml
 plugins: anyio-4.14.2, randomly-4.1.0, cov-7.1.0, mypy-1.0.1, clarity-1.0.1, sphinx-0.7.1, xdist-3.8.0
@@ -14,15 +14,15 @@ scheduling tests via LoadScheduling
 
 enlotus/lotus/test/test_lotus.py::test_Lotus_cover 
 enlotus/lotus/test/test_lotus.py::test_Lotus 
+enlotus/lotus/test/test_config.py::test_LotusConfig 
 enlotus/lotus/test/test_models.py::test_LotusModels_cover 
 [gw2] [ 25%] PASSED enlotus/lotus/test/test_models.py::test_LotusModels_cover 
-enlotus/lotus/test/test_config.py::test_LotusConfig 
 [gw0] [ 50%] PASSED enlotus/lotus/test/test_lotus.py::test_Lotus_cover 
-[gw1] [ 75%] PASSED enlotus/lotus/test/test_lotus.py::test_Lotus 
-[gw3] [100%] PASSED enlotus/lotus/test/test_config.py::test_LotusConfig 
+[gw3] [ 75%] PASSED enlotus/lotus/test/test_config.py::test_LotusConfig 
+[gw1] [100%] PASSED enlotus/lotus/test/test_lotus.py::test_Lotus 
 
 ================================ tests coverage ================================
-_______________ coverage: platform linux, python 3.12.13-final-0 _______________
+_______________ coverage: platform linux, python 3.12.14-final-0 _______________
 
 Name                                Stmts   Miss  Cover
 -------------------------------------------------------
@@ -41,7 +41,7 @@ enlotus/lotus/test/test_lotus.py       28      0   100%
 enlotus/lotus/test/test_models.py       4      0   100%
 -------------------------------------------------------
 TOTAL                                 201      0   100%
-============================== 4 passed in 2.08s ===============================
+============================== 4 passed in 2.66s ===============================
     DONE
   ● Write coveragepy output to htmlcov..
     DONE
